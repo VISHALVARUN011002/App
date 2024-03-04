@@ -51,7 +51,7 @@ function PersonalInfo({reimbursementAccount, reimbursementAccountDraft, onBackBu
     }, [values, bankAccountID, policyID]);
     const startFrom = useMemo(() => getInitialSubstepForPersonalInfo(values), [values]);
 
-    const {componentToRender: SubStep, isEditing, screenIndex, nextScreen, prevScreen, moveTo, goToTheLastStep} = useSubStep({bodyContent, startFrom, onFinished: submit});
+    const {componentToRender: SubStep, isEditing, screenIndex, nextScreen, prevScreen, moveTo, goToTheLastStep} = useSubStep({bodyContent, startFrom, onFinished: submit, onNextSubStep: submit});
 
     const handleBackButtonPress = () => {
         if (isEditing) {
